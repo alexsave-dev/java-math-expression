@@ -5,6 +5,10 @@ import expression.ConsoleHelper;
 import expression.Parser;
 import expression.Validator;
 
+/**
+ * The {@code Main} class allows the user to input the arithmetic expression into
+ * the console and see the result of the calculation.
+ */
 public class Main {
 
     public static void main(String[] args) {
@@ -18,10 +22,9 @@ public class Main {
             if (expression.equals("exit")) {
                 return;
             }
-            expression = validator.removeSpaces(expression);
             if (validator.validate(expression)) {
                 try {
-                    ConsoleHelper.writeMessage("The result is " + calculator.calculate(parser.parseToPolishNotation(expression)));
+                    ConsoleHelper.writeMessage("The result is " + calculator.calculate(parser.parseToReversePolishNotation(expression)));
                 } catch (ParsingException | CalculationException e) {
                     System.out.println(e.getMessage());
                 }

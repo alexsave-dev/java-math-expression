@@ -2,6 +2,9 @@ package expression;
 
 import java.util.Scanner;
 
+/**
+ * The {@code Calculator} class to handle I/O console actions.
+ */
 public class ConsoleHelper {
 
 
@@ -15,7 +18,7 @@ public class ConsoleHelper {
 
     public static String readMessage() {
         Scanner scanner = new Scanner(System.in);
-        return scanner.next();
+        return scanner.nextLine();
     }
 
 }
